@@ -45,7 +45,7 @@
              <a-marker id="marker" preset='custom' type='pattern' url='https://pantherstudio1.github.io/webar_social_media/marker/pattern-marker.patt'>
              
                 <!-- Here we define the content to show on the marker when it gets detected: a unit cube that lies on the floor and that is red -->
-                <a-box position='0 0.5 0' color="red"  facebook-component></a-box>
+                <a-box id="box" position='0 0.5 0' color="red"  facebook-component></a-box>
                 <a-image src="#facebook" position="-1.25 0.01 0" scale="0.4 0.4 0.4" rotation="-90 0 0" id="facebookBtn" look-at="#cam"  facebook-component></a-image>
                 <a-image src="#instagram" position="-0.75 0.01 0" scale="0.4 0.4 0.4" rotation="-90 0 0" id="instagramBtn" look-at="#cam" instagramBtn></a-image>
                 <a-image src="#twitter" position="-0.25 0.01 0" scale="0.4 0.4 0.4" rotation="-90 0 0" id="twitterBtn" look-at="#cam" twitterBtn></a-image>
@@ -64,13 +64,14 @@
 
             init: function() {
                 const animatedMarker = document.querySelector("#marker");
-                const aEntity = document.querySelector("#facebookBtn");
+                const aEntity = document.querySelector("#box");
 
                 // every click, we make our model grow in size :)
                 animatedMarker.addEventListener('click', function(ev, target){
+                    console.log("Box is clicked...");
                     const intersectedElement = ev && ev.detail && ev.detail.intersectedEl;
                     if (aEntity && intersectedElement === aEntity) {
-                        alert('Facebook Clicked!')
+                        alert('Facebook Clicked!');
                         window.open("https://www.facebook.com/", "_blank");
                     }
                 });
