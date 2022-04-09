@@ -46,16 +46,44 @@
              
                 <!-- Here we define the content to show on the marker when it gets detected: a unit cube that lies on the floor and that is red -->
                 <!-- <a-box position='0 0.5 0' color="red"></a-box> -->
-                <a-image src="#facebook" position="-1.25 0.01 0" scale="0.4 0.4 0.4" rotation="-90 0 0" look-at="#cam"></a-image>
-                <a-image src="#instagram" position="-0.75 0.01 0" scale="0.4 0.4 0.4" rotation="-90 0 0" look-at="#cam"></a-image>
-                <a-image src="#twitter" position="-0.25 0.01 0" scale="0.4 0.4 0.4" rotation="-90 0 0" look-at="#cam"></a-image>
-                <a-image src="#youtube" position="0.25 0.01 0" scale="0.4 0.4 0.4" rotation="-90 0 0" look-at="#cam"></a-image>
-                <a-image src="#android" position="0.75 0.01 0" scale="0.4 0.4 0.4" rotation="-90 0 0" look-at="#cam"></a-image>
-                <a-image src="#apple" position="1.25 0.01 0" scale="0.4 0.4 0.4" rotation="-90 0 0" look-at="#cam"></a-image>
+                <a-image src="#facebook" position="-1.25 0.01 0" scale="0.4 0.4 0.4" rotation="-90 0 0" id="facebookBtn" look-at="#cam"></a-image>
+                <a-image src="#instagram" position="-0.75 0.01 0" scale="0.4 0.4 0.4" rotation="-90 0 0" id="instagramBtn" look-at="#cam"></a-image>
+                <a-image src="#twitter" position="-0.25 0.01 0" scale="0.4 0.4 0.4" rotation="-90 0 0" id="twitterBtn" look-at="#cam"></a-image>
+                <a-image src="#youtube" position="0.25 0.01 0" scale="0.4 0.4 0.4" rotation="-90 0 0" id="youtubeBtn" look-at="#cam"></a-image>
+                <a-image src="#android" position="0.75 0.01 0" scale="0.4 0.4 0.4" rotation="-90 0 0" id="androidBtn" look-at="#cam"></a-image>
+                <a-image src="#apple" position="1.25 0.01 0" scale="0.4 0.4 0.4" rotation="-90 0 0" id="appleBtn" look-at="#cam"></a-image>
              </a-marker>
              
              <!-- Define the camera of the scene -->
              <a-entity camera></a-entity>
         </a-scene>
+        
+        
+        <script>
+            document.getElementById("facebookBtn").addEventListener("click", function() {
+                window.open("https://www.facebook.com/", "_blank");
+            });
+
+            document.getElementById("instagramBtn").addEventListener("click", function() {
+                window.open("https://www.instagram.com/", "_blank");
+            });
+
+            document.getElementById("twitterBtn").addEventListener("click", function() {
+                window.open("https://www.twitter.com/", "_blank");
+            });
+
+            document.getElementById("youtubeBtn").addEventListener("click", function() {
+                window.open("https://www.youtube.com/", "_blank");
+            });
+
+            document.getElementById("androidBtn").addEventListener("click", function() {
+                window.open("https://play.google.com/store", "_blank");
+            });
+
+            document.getElementById("appleBtn").addEventListener("click", function() {
+                window.open("https://www.https://www.apple.com/in/app-store/.com/", "_blank");
+            });
+
+        </script>
     </body>
 </html>
