@@ -27,14 +27,6 @@
     </head>
      
     <body style='margin : 0px; overflow: hidden;'>
-        
-        <div style="height:200px; width:50%; background-color:red" id="tempDiv"></div>
-        <script>
-            document.getElementById("tempDiv").addEventListener("click", function() {
-                window.open("https://www.facebook.com/", "_blank");
-            });
-        </script>
-        
         <!-- a-scene defines the scene that we are agoing to use. After arjs= there are various options that can be customized  -->
         <!-- depending on your needs. For now just stick with these ones -->
         <a-scene embedded arjs='sourceType: webcam; debugUIEnabled: false;'>
@@ -54,18 +46,68 @@
              
                 <!-- Here we define the content to show on the marker when it gets detected: a unit cube that lies on the floor and that is red -->
                 <!-- <a-box position='0 0.5 0' color="red"></a-box> -->
-                <a-image src="#facebook" position="-1.25 0.01 0" scale="0.4 0.4 0.4" rotation="-90 0 0" id="facebookBtn" look-at="#cam"></a-image>
-                <a-image src="#instagram" position="-0.75 0.01 0" scale="0.4 0.4 0.4" rotation="-90 0 0" id="instagramBtn" look-at="#cam"></a-image>
-                <a-image src="#twitter" position="-0.25 0.01 0" scale="0.4 0.4 0.4" rotation="-90 0 0" id="twitterBtn" look-at="#cam"></a-image>
-                <a-image src="#youtube" position="0.25 0.01 0" scale="0.4 0.4 0.4" rotation="-90 0 0" id="youtubeBtn" look-at="#cam"></a-image>
-                <a-image src="#android" position="0.75 0.01 0" scale="0.4 0.4 0.4" rotation="-90 0 0" id="androidBtn" look-at="#cam"></a-image>
-                <a-image src="#apple" position="1.25 0.01 0" scale="0.4 0.4 0.4" rotation="-90 0 0" id="appleBtn" look-at="#cam"></a-image>
+                <a-image src="#facebook" position="-1.25 0.01 0" scale="0.4 0.4 0.4" rotation="-90 0 0" id="facebookBtn" look-at="#cam" facebookBtn></a-image>
+                <a-image src="#instagram" position="-0.75 0.01 0" scale="0.4 0.4 0.4" rotation="-90 0 0" id="instagramBtn" look-at="#cam" instagramBtn></a-image>
+                <a-image src="#twitter" position="-0.25 0.01 0" scale="0.4 0.4 0.4" rotation="-90 0 0" id="twitterBtn" look-at="#cam" twitterBtn></a-image>
+                <a-image src="#youtube" position="0.25 0.01 0" scale="0.4 0.4 0.4" rotation="-90 0 0" id="youtubeBtn" look-at="#cam" youtubeBtn></a-image>
+                <a-image src="#android" position="0.75 0.01 0" scale="0.4 0.4 0.4" rotation="-90 0 0" id="androidBtn" look-at="#cam" androidBtn></a-image>
+                <a-image src="#apple" position="1.25 0.01 0" scale="0.4 0.4 0.4" rotation="-90 0 0" id="appleBtn" look-at="#cam" appleBtn></a-image>
              </a-marker>
              
              <!-- Define the camera of the scene -->
              <a-entity camera></a-entity>
         </a-scene>
         
+        <script>
+            AFRAME.registerComponent('facebookBtn', {
+                init: function() {
+                    this.el.addEventListener('click', () => {
+                        alert('Facebook Clicked!')
+                        window.open("https://www.facebook.com/", "_blank");
+                    });
+            }});
+
+            AFRAME.registerComponent('instagramBtn', {
+                init: function() {
+                    this.el.addEventListener('click', () => {
+                        alert('Instagram Clicked!')
+                        window.open("https://www.instagram.com/", "_blank");
+                    });
+            }});
+
+            AFRAME.registerComponent('twitterBtn', {
+                init: function() {
+                    this.el.addEventListener('click', () => {
+                        alert('Twitter Clicked!')
+                        window.open("https://www.twitter.com/", "_blank");
+                    });
+            }});
+
+            AFRAME.registerComponent('youtubeBtn', {
+                init: function() {
+                    this.el.addEventListener('click', () => {
+                        alert('Twitter Clicked!')
+                        window.open("https://www.youtube.com/", "_blank");
+                    });
+            }});
+
+            AFRAME.registerComponent('androidBtn', {
+                init: function() {
+                    this.el.addEventListener('click', () => {
+                        alert('Twitter Clicked!')
+                        window.open("https://play.google.com/store", "_blank");
+                    });
+            }});
+
+            AFRAME.registerComponent('appleBtn', {
+                init: function() {
+                    this.el.addEventListener('click', () => {
+                        alert('Twitter Clicked!')
+                        window.open("https://www.https://www.apple.com/in/app-store/.com/", "_blank");
+                    });
+            }});
+
+        </script>
         
         <script>
             document.getElementById("facebookBtn").addEventListener("click", function() {
