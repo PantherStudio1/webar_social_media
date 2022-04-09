@@ -60,7 +60,7 @@
         
         <script>
             
-            AFRAME.registerComponent('facebook-component', {
+            /*AFRAME.registerComponent('facebook-component', {
 
             init: function() {
                 const animatedMarker = document.querySelector("#marker");
@@ -75,9 +75,17 @@
                         window.open("https://www.facebook.com/", "_blank");
                     }
                 });
-            }});
+            }});*/
             
 
+            AFRAME.registerComponent('facebookBtn', {
+                init: function() {
+                    this.el.addEventListener('click', () => {
+                        alert('Instagram Clicked!')
+                        window.open("https://www.facebook.com/", "_blank");
+                    });
+            }});
+            
             AFRAME.registerComponent('instagramBtn', {
                 init: function() {
                     this.el.addEventListener('click', () => {
@@ -114,13 +122,13 @@
                 init: function() {
                     this.el.addEventListener('click', () => {
                         alert('Twitter Clicked!')
-                        window.open("https://www.https://www.apple.com/in/app-store/.com/", "_blank");
+                        window.open("https://www.apple.com/in/app-store/.com/", "_blank");
                     });
             }});
 
         </script>
         
-        <script>
+        <!--<script>
             document.getElementById("facebookBtn").addEventListener("click", function() {
                 window.open("https://www.facebook.com/", "_blank");
             });
@@ -142,9 +150,9 @@
             });
 
             document.getElementById("appleBtn").addEventListener("click", function() {
-                window.open("https://www.https://www.apple.com/in/app-store/.com/", "_blank");
+                window.open("https://www.apple.com/in/app-store/.com/", "_blank");
             });
 
-        </script>
+        </script> -->
     </body>
 </html>
